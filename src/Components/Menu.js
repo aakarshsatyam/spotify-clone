@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
+import "../styles/LeftMenu.css";
 
 function Menu({ title, menuObject }) {
   useEffect(() => {
     const allLi = document
-      .querySelector(".MenuConatiner ul")
+      .querySelector(".MenuContainer ul")
       .querySelectorAll("li");
 
     function changeMenuActive() {
@@ -20,7 +21,7 @@ function Menu({ title, menuObject }) {
       <ul>
         {menuObject &&
           menuObject.map((menu) => (
-            <li>
+            <li key={menu.id}>
               <a href="#">
                 <i>{menu.icon}</i>
                 <span>{menu.name}</span>

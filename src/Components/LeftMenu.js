@@ -1,10 +1,12 @@
 import React from "react";
-import "../Styles/LeftMenu.css";
+import "../styles/LeftMenu.css";
 
 import { FaSpotify, FaEllipsisH } from "react-icons/fa";
 import { BiSearchAlt } from "react-icons/bi";
 import { Menu } from "./Menu";
 import { MenuList } from "./MenuList";
+import { MenuPlayList } from "./MenuPlayList";
+import { TrackList } from "./TrackList";
 
 function LeftMenu() {
   return (
@@ -25,6 +27,8 @@ function LeftMenu() {
         </i>
       </div>
       <Menu title={"Menu"} menuObject={MenuList} />
+      <MenuPlayList />
+      <TrackList />
     </div>
   );
 }

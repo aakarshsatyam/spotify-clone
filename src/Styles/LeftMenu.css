@@ -1,4 +1,4 @@
-.leftMenu{
+.leftMenu {
     width: 280px;
     height: 100%;
     min-height: 100vh;
@@ -6,17 +6,17 @@
     backdrop-filter: blur(10px);
     padding: 20px 15px;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.175,0.885,0.30,1.30);
 }
 
-.leftMenu .logoContainer{
+.leftMenu .logoContainer {
     color: #f1f1f1;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.leftMenu .logoContainer i{
+.leftMenu .logoContainer i {
     font-size: 30px;
 }
 
@@ -24,13 +24,13 @@
     font-size: 20px !important;
 }
 
-.leftMenu .logoContainer h2{
+.leftMenu .logoContainer h2 {
     font-size: 20px;
 }
 
 .searchBox {
     width: 100%;
-    height: 45px;
+    height: 35px;
     /* background: coral; */
     position: relative;
     margin-top: 20px;
@@ -58,9 +58,9 @@
     left: 0;
     color: #848484;
     width: 45px;
-    height: 45px;
+    height: 35px;
     text-align: center;
-    line-height: 45px;
+    line-height: 40px;
     font-size: 20px;
 }
 
@@ -86,7 +86,7 @@
     list-style: none;
     margin: 5px 0;
     width: 100%;
-    padding:  5px 0px;
+    /* padding: 2px 0px; */
     position: relative;
 }
 
@@ -126,3 +126,220 @@
     color: #f1f1f1;
     transform: 0.3s;
 }
+
+.playListConatiner {
+    cursor: pointer;
+    margin: 15px 0;
+}
+
+.playListConatiner .nameConatiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #848484;
+    margin-bottom: 10px;
+}
+
+.playListConatiner .nameConatiner p {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.playListConatiner .nameConatiner i {
+ cursor: pointer;
+ color: #f1f1f1;
+}
+
+.playListConatiner .playListScroll {
+    height: 140px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.playListConatiner .playListScroll .playList {
+    display: flex;
+    align-items: center;
+    color: #848484;
+    margin: 10px 0;
+}
+
+.playListConatiner .playListScroll .playList:hover {
+    color: #f1f1f1;
+    transition: 00.3s;
+}
+
+
+.playListConatiner .playListScroll .playList i {
+    font-size: 18px;
+}
+
+.playListConatiner .playListScroll .playList .list {
+    margin-right: 15px;
+}
+
+.playListConatiner .playListScroll .playList .trash {
+    margin-left: auto;
+}
+
+.playListConatiner .playListScroll .playList p {
+    font-size: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline;
+}
+
+.trackList {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+.trackList .top {
+    display: flex;
+    align-items: center;
+}
+
+.trackList .top img {
+    width: 40px !important;
+}
+
+.trackList .top .trackName {
+    margin: 5px;
+    color: #f1f1f1;
+    font-size: 14px;
+}
+
+.trackList .top .trackName .trackSpan {
+    display: block;
+    font-size: 12px;
+    color: #848484;
+}
+
+.trackList .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    color: #848484;
+}
+
+.trackList .bottom i {
+    font-size: 18px;
+}
+
+.trackList .bottom i:hover {
+    color: #f1f1f1;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.trackList .bottom input {
+    position: relative;
+    height: 5px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    appearance: none;
+}
+
+/* Chrome and Safari */
+.trackList .bottom input::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    background: #49E12E;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    z-index: 2;
+    transition: width 250ms linear;
+}
+
+.trackList .bottom input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 20px;
+    border-radius: 10px;
+    background: #f1f1f1;
+    border: 1px solid #000;
+    cursor: pointer;
+    position: relative;
+    margin:  -2px 0 0 0;
+    z-index: 3;
+    box-sizing: border-box;
+    transition: all 250ms linear;
+}
+
+/* Firefox */
+.trackList .bottom input::-moz-progress-bar {
+    background: #49E12E;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    z-index: 2;
+    transition: width 250ms linear;    
+}
+
+.trackList .bottom input::-moz-range-thumb {
+    background: #49E12E;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    z-index: 2;
+    transition: width 250ms linear;    
+}
+
+@media screen and (max-width : 550px)  {
+    .leftMenu {
+        width: 64px;
+        min-width: 64px;
+    }
+
+    .leftMenu .searchBox {
+        display: none;
+    }
+
+    .leftMenu .trackList {
+        display: none;
+    }
+
+    .leftMenu .playListConatiner {
+        display: none;
+    }
+
+    .leftMenu .MenuContainer ul li a span {
+        display: none;
+    }
+
+    .leftMenu .MenuContainer ul li a i {
+        font-size: 26px;
+    }
+
+    .leftMenu .MenuContainer ul li {
+        margin: 25px 0;
+    }
+
+    .leftMenu .logoContainer h2 {   
+        margin-left: 20px;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
